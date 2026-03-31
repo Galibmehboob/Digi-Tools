@@ -1,6 +1,6 @@
 const Navbar = () => {
     return (
-        <header className="  border-b-2 bg-zinc-50 border-zinc-200 sticky top-0 z-10">
+        <header className="  border-b-2 backdrop-blur-md bg-white/70 border-zinc-200 sticky top-0 z-10">
             <div className="flex justify-between items-center px-10 py-5 mx-10">
                 <h1 className="text-4xl font-bold text-purple-600">DigiTools</h1>
 

@@ -21,7 +21,7 @@ const productProm = getProduct()
 function App() {
   const [activeTab, setActiveTab] = useState("product")
   const [carts, setCarts] = useState([])
-  console.log(carts);
+  // console.log(carts);
 
 
   // console.log(activeTab);
@@ -38,7 +38,7 @@ function App() {
         <input onClick={() => setActiveTab("cart")} type="radio" name="my_tabs_1" className="tab w-30 rounded-full" aria-label="Cart" />
       </div>
       {activeTab === "product" && <Products productProm={productProm} carts={carts} setCarts={setCarts}></Products>}
-      {activeTab === "cart" && <Carts carts={carts}></Carts>}
+      {activeTab === "cart" && <Carts carts={carts} setCarts={setCarts}></Carts>}
       <Steps></Steps>
       <Pricing></Pricing>
       <CTA></CTA>
