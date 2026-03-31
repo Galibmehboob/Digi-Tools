@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "name": "Starter Resume Kit",
+    "description": "Perfect for beginners to create professional resumes quickly.",
+    "price": 0,
+    "period": "one-time",
+    "tag": "New",
+    "tagType": "new",
+    "features": ["10+ templates", "Basic customization", "Export to PDF"],
+    "icon": "/design-tool.png"
+  },
+  {
+    "id": 2,
+    "name": "Pro Resume Builder",
+    "description": "Advanced resume builder with ATS optimization.",
+    "price": 9.99,
+    "period": "monthly",
+    "tag": "Popular",
+    "tagType": "popular",
+    "features": ["100+ templates",  "Custom sections", "Export to PDF"],
+    "icon": "/writing.png"
+  },
+  {
+    "id": 3,
+    "name": "Portfolio Website Pack",
+    "description": "Create a stunning personal portfolio website easily.",
+    "price": 19.99,
+    "period": "one-time",
+    "tag": "Best Seller",
+    "tagType": "best",
+    "features": ["Responsive design", "SEO optimized",  "Custom domain support"],
+    "icon": "/portfolio.png"
+  },
+  {
+    "id": 4,
+    "name": "Freelancer Toolkit",
+    "description": "Everything you need to start freelancing.",
+    "price": 14.99,
+    "period": "monthly",
+    "tag": "Popular",
+    "tagType": "popular",
+    "features": ["Proposal templates", "Client tracker", "Invoice generator"],
+    "icon": "/operation.png"
+  },
+  {
+    "id": 5,
+    "name": "E-commerce Starter Pack",
+    "description": "Launch your online store with ready tools.",
+    "price": 29.99,
+    "period": "yearly",
+    "tag": "Best Seller",
+    "tagType": "best",
+    "features": ["Product management", "Payment integration", "Order tracking"],
+    "icon": "/shopping-cart.png"
+  },
+  {
+    "id": 6,
+    "name": "Social Media Growth Kit",
+    "description": "Boost your online presence and engagement.",
+    "price": 7.99,
+    "period": "monthly",
+    "tag": "New",
+    "tagType": "new",
+    "features": ["Content calendar", "Hashtag generator", "Analytics tools"],
+    "icon": "/social-media.png"
+  },
+  {
+    "id": 7,
+    "name": "UI Design System",
+    "description": "Modern UI components for faster design workflow.",
+    "price": 24.99,
+    "period": "one-time",
+    "tag": "Popular",
+    "tagType": "popular",
+    "features": ["Figma files", "Reusable components", "Dark/light mode"],
+    "icon": "/design-tool.png"
+  },
+  {
+    "id": 8,
+    "name": "Startup Launch Bundle",
+    "description": "Complete toolkit to launch your startup idea.",
+    "price": 49.99,
+    "period": "yearly",
+    "tag": "Best Seller",
+    "tagType": "best",
+    "features": ["Business templates", "Pitch deck", "Marketing plan"],
+    "icon": "/rocket.png"
+  }
+]
