@@ -28,12 +28,12 @@ const Navbar = ({ carts, setActiveTab }) => {
 
                     <button
                         onClick={() => setActiveTab("cart")}
-                        className="btn btn-circle bg-white border relative"
+                        className="btn btn-circle bg-white border-none relative"
                     >
                         <img src="/shopping-cart.png" alt="cart" />
 
                         {carts.length > 0 && (
-                            <span className="badge badge-sm text-white px-2 rounded-full bg-red-500 absolute -top-1 -right-1">
+                            <span className="badge badge-sm text-white border-none px-2 rounded-full bg-red-500 absolute -top-1 -right-1">
                                 {carts.length}
                             </span>
                         )}
@@ -52,7 +52,7 @@ const Navbar = ({ carts, setActiveTab }) => {
                         className="md:hidden text-2xl"
                         onClick={() => setMenuOpen(!menuOpen)}
                     >
-                        ☰
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block h-5 w-5 stroke-current"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path> </svg>
                     </button>
 
                 </div>

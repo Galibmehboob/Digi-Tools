@@ -1,28 +1,26 @@
 import { toast } from "react-toastify";
 
-
 const Carts = ({ carts, setCarts }) => {
-    const totalPrice = carts.reduce((sum, item) => sum + item.price, 0)
+    const totalPrice = carts.reduce((sum, item) => sum + item.price, 0);
+
     const handlePay = () => {
-        setCarts([])
-        toast.success("Successfully Purchased!! ")
+        setCarts([]);
+        toast.success("Successfully Purchased!! ");
     };
 
     const handleDelete = (item) => {
-        const filteredArray = carts.filter(car => car.id !== item.id)
-        setCarts(filteredArray)
-        toast.error("Remove from Cart!")
-
-    }
+        const filteredArray = carts.filter(car => car.id !== item.id);
+        setCarts(filteredArray);
+        toast.error("Remove from Cart!");
+    };
 
     return (
-        <div className="mb-5">
-            <div className="border border-zinc-300 w-7xl px-5 py-3 m-5 mx-auto rounded-xl">
+        <div className="mb-5 px-3">
+            <div className="border border-zinc-300 w-full max-w-7xl px-3 sm:px-5 py-3 m-5 mx-auto rounded-xl">
 
                 {
                     carts.length === 0 ?
                         <div className="flex flex-col items-center justify-center py-20 text-center">
-
 
                             <div className="bg-purple-100 p-6 rounded-full mb-4">
                                 <svg
@@ -41,7 +39,6 @@ const Carts = ({ carts, setCarts }) => {
                                 </svg>
                             </div>
 
-
                             <h2 className="text-xl font-semibold text-gray-800">
                                 Your cart is empty
                             </h2>
@@ -49,49 +46,60 @@ const Carts = ({ carts, setCarts }) => {
                                 Looks like you haven’t added anything yet.
                             </p>
 
-                        </div> :
+                        </div>
+                        :
                         <>
                             <div className="mt-5">
                                 {
-                                    carts.map(items => <div key={items.id} className="flex justify-between  rounded-2xl shadow transition duration-300 hover:-translate-y-0.5 hover:shadow-xl border border-zinc-200 mb-4 px-10 py-3 w-6xl mx-auto bg-zinc-100">
+                                    carts.map(items => (
+                                        <div
+                                            key={items.id}
+                                            className="flex justify-between rounded-2xl shadow transition duration-300 hover:-translate-y-0.5 hover:shadow-xl border border-zinc-200 mb-4 px-4 sm:px-10 py-3 w-full max-w-6xl mx-auto bg-zinc-100"
+                                        >
+                                            <div className="flex gap-2">
+                                                <div className="border border-zinc-300 rounded-full p-4 sm:p-5 bg-purple-100">
+                                                    <img src={items.icon} alt={items.name} className="w-5 h-5" />
+                                                </div>
+                                                <div>
+                                                    <h2 className="font-semibold text-lg sm:text-xl">{items.name}</h2>
+                                                    <p className="text-gray-500 text-sm sm:text-lg mt-2">
+                                                        <span className="font-semibold text-black">
+                                                            ${items.price}
+                                                        </span>
+                                                        /{items.period}
+                                                    </p>
+                                                </div>
+                                            </div>
 
-                                        <div className="flex gap-2">
-                                            <div className="border border-zinc-300 rounded-full p-5  bg-purple-100">
-                                                <img src={items.icon} alt={items.name} className="w-5 h-5" />
-                                            </div>
-                                            <div>
-                                                <h2 className="font-semibold text-xl">{items.name}</h2>
-                                                <p className="text-gray-500 text-lg mt-2">
-                                                    <span className="font-semibold text-md text-black">
-                                                        ${items.price}
-                                                    </span>
-                                                    /{items.period}
-                                                </p>
-                                            </div>
+                                            <button
+                                                onClick={() => handleDelete(items)}
+                                                className="text-red-500 cursor-pointer text-sm sm:text-base"
+                                            >
+                                                Remove
+                                            </button>
                                         </div>
-                                        <button onClick={() => handleDelete(items)} className="text-red-500 cursor-pointer">Remove</button>
-
-                                    </div>)
+                                    ))
                                 }
-
-
                             </div>
-                            <div className="flex justify-between  rounded-2xl shadow border border-zinc-200 mb-4 px-10 py-3 w-6xl mx-auto bg-purple-200">
-                                <h1 className="text-2xl font-bold">Total</h1>
-                                <p className="text-2xl font-bold">
+
+                            <div className="flex justify-between rounded-2xl shadow border border-zinc-200 mb-4 px-5 sm:px-10 py-3 w-full max-w-6xl mx-auto bg-purple-200">
+                                <h1 className="text-xl sm:text-2xl font-bold">Total</h1>
+                                <p className="text-xl sm:text-2xl font-bold">
                                     ${totalPrice.toFixed(2)}
                                 </p>
                             </div>
                         </>
                 }
 
-
-
-
             </div>
-            <button onClick={handlePay} className="btn bg-purple-600 text-white w-7xl flex mx-auto rounded-full shadow transition duration-300 hover:translate-y-0.5 hover:bg-blue-800 hover:shadow-xl  ">Proceed to Checkout</button>
-        </div>
 
+            <button
+                onClick={handlePay}
+                className="btn border-none bg-purple-600 text-white w-full max-w-7xl flex mx-auto rounded-full shadow transition duration-300 hover:translate-y-0.5 hover:bg-blue-800 hover:shadow-xl"
+            >
+                Proceed to Checkout
+            </button>
+        </div>
     );
 };
 
