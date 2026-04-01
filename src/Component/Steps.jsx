@@ -15,7 +15,7 @@ const Steps = () => {
 
                 <div className="bg-white space-y-3 shadow px-6 py-16 md:py-24 rounded-xl flex flex-col items-center justify-center">
 
-                    <div className="relative bottom-10 md:bottom-20 left-0 md:left-0 flex items-center justify-center h-10 w-10 md:h-12 md:w-12 rounded-full bg-purple-600 text-white text-sm md:text-lg font-semibold">
+                    <div className="relative bottom-10 md:bottom-20 left-0 md:left-36 flex items-center justify-center h-10 w-10 md:h-12 md:w-12 rounded-full bg-purple-600 text-white text-sm md:text-lg font-semibold">
                         01
                     </div>
 
@@ -31,7 +31,7 @@ const Steps = () => {
 
                 <div className="bg-white space-y-3 shadow px-6 py-16 md:py-24 rounded-xl flex flex-col items-center justify-center">
 
-                    <div className="relative bottom-10 md:bottom-20 left-0 md:left-0 flex items-center justify-center h-10 w-10 md:h-12 md:w-12 rounded-full bg-purple-600 text-white text-sm md:text-lg font-semibold">
+                    <div className="relative  bottom-10 md:bottom-20 left-0 md:left-36 flex items-center justify-center h-10 w-10 md:h-12 md:w-12 rounded-full bg-purple-600 text-white text-sm md:text-lg font-semibold">
                         02
                     </div>
 
@@ -47,7 +47,7 @@ const Steps = () => {
 
                 <div className="bg-white space-y-3 shadow px-6 py-16 md:py-24 rounded-xl flex flex-col items-center justify-center">
 
-                    <div className="relative bottom-10 md:bottom-20 left-0 md:left-0 flex items-center justify-center h-10 w-10 md:h-12 md:w-12 rounded-full bg-purple-600 text-white text-sm md:text-lg font-semibold">
+                    <div className="relative bottom-10 md:bottom-20 left-0 md:left-36 flex items-center justify-center h-10 w-10 md:h-12 md:w-12 rounded-full bg-purple-600 text-white text-sm md:text-lg font-semibold">
                         03
                     </div>
 
