@@ -29,14 +29,41 @@ function App() {
     <div className="">
 
 
-      <Navbar></Navbar>
+      <Navbar carts={carts} setActiveTab={setActiveTab}></Navbar>
       <Hero>  </Hero>
       <Stats></Stats>
       <CardHead></CardHead>
-      <div className="tabs tabs-box bg-transparent flex items-center justify-center mt-5">
-        <input onClick={() => setActiveTab("product")} type="radio" name="my_tabs_1" className="tab text-white bg-linear-to-r from-purple-600 to-pink-400 w-30 rounded-full" aria-label="Product's" defaultChecked />
-        <input onClick={() => setActiveTab("cart")} type="radio" name="my_tabs_1" className="tab w-30 rounded-full" aria-label="Cart" />
+
+      {/* Button section */}
+      <div className="relative cursor-pointer flex items-center justify-between w-64 mx-auto  rounded-full p-1 mt-5">
+        <div
+          className={`absolute top-1 left-1 h-10 w-1/2 rounded-full bg-linear-to-r from-purple-600 to-pink-400 
+            transition-all duration-300 ease-in-out
+    ${activeTab === "cart" ? "translate-x-full" : "translate-x-0"}`}
+        ></div>
+
+        {/* Product */}
+        <button
+          onClick={() => setActiveTab("product")}
+          className={`cursor-pointer relative z-10 w-1/2 text-center py-2 rounded-full transition
+             ${activeTab === "product" ? "text-white" : "text-gray-600"
+            }`}
+        >
+          Products
+        </button>
+
+        {/* Cart */}
+        <button
+          onClick={() => setActiveTab("cart")}
+          className={`cursor-pointer relative z-10 w-1/2 text-center py-2 rounded-full transition
+             ${activeTab === "cart" ? "text-white" : "text-gray-600"
+            }`}
+        >
+          Cart ({carts.length})
+        </button>
       </div>
+      {/* Button End */}
+
       {activeTab === "product" && <Products productProm={productProm} carts={carts} setCarts={setCarts}></Products>}
       {activeTab === "cart" && <Carts carts={carts} setCarts={setCarts}></Carts>}
       <Steps></Steps>

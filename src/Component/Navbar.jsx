@@ -1,4 +1,4 @@
-const Navbar = () => {
+const Navbar = ({ carts, setActiveTab }) => {
     return (
         <header className="  border-b-2 backdrop-blur-md bg-white/70 border-zinc-200 sticky top-0 z-10">
             <div className="flex justify-between items-center px-10 py-5 mx-10">
@@ -13,9 +13,12 @@ const Navbar = () => {
                 </nav>
 
                 <div className="flex gap-3">
-                    <button className="btn btn-circle"><img className="absolute" src="/shopping-cart.png" alt="" />
-                        <span className="badge badge-sm indicator-item text-white px-2 rounded-full bg-red-400  relative -top-4 left-4 ">0</span>
-
+                    <button onClick={() => setActiveTab("cart")} className="btn btn-circle bg-white border-none relative"><img src="/shopping-cart.png" alt="" />
+                        {carts.length > 0 && (
+                            <span className="badge badge-sm text-white px-2 rounded-full border-none bg-red-400 absolute -top-1 -right-1 ">
+                                {carts.length}
+                            </span>
+                        )}
                     </button>
                     <button className="text-sm">Login</button>
                     <button className="bg-purple-600 text-white px-4 py-2 rounded-full text-sm">

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Check } from "lucide-react";
 import Products from "./Products";
+import { toast } from "react-toastify";
 
 
 const Cards = ({ p, i, tagStyles, carts, setCarts }) => {
@@ -8,6 +9,7 @@ const Cards = ({ p, i, tagStyles, carts, setCarts }) => {
     const handleBuyNow = () => {
         setIsAddedCart(true)
         setCarts([...carts, p])
+        toast.success("Item Added to Cart")
     }
     return (
         <div key={i} className="group bg-white p-6 rounded-xl shadow 
@@ -53,8 +55,14 @@ const Cards = ({ p, i, tagStyles, carts, setCarts }) => {
             </div>
 
 
-            <button onClick={handleBuyNow} className="cursor-pointer mt-4 bg-linear-to-r from-purple-600 to-pink-400
-                         text-white px-4 py-2 rounded-full w-full transition hover:translate-y-1  hover:opacity-80">
+            <button
+                onClick={handleBuyNow}
+                className={`cursor-pointer mt-4 text-white px-4 py-2 rounded-full w-full transition-all duration-300 ease-in-out 
+  ${isAddedCart
+                        ? "bg-green-400"
+                        : "bg-linear-to-r from-purple-600 to-pink-400"
+                    } hover:translate-y-1 hover:opacity-80`}
+            >
                 {isAddedCart ? "Added to cart" : "Buy Now"}
             </button>
         </div>
