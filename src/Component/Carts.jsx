@@ -4,6 +4,7 @@ const Carts = ({ carts, setCarts }) => {
     const totalPrice = carts.reduce((sum, item) => sum + item.price, 0);
 
     const handlePay = () => {
+        if (carts.length === 0) return;
         setCarts([]);
         toast.success("Successfully Purchased!! ");
     };
@@ -93,9 +94,15 @@ const Carts = ({ carts, setCarts }) => {
 
             </div>
 
+
             <button
                 onClick={handlePay}
-                className="btn border-none bg-purple-600 text-white w-full max-w-7xl flex mx-auto rounded-full shadow transition duration-300 hover:translate-y-0.5 hover:bg-blue-800 hover:shadow-xl"
+
+                className={`btn border-none w-full max-w-7xl flex mx-auto rounded-full shadow transition duration-300 
+                ${carts.length === 0
+                        ? "bg-gray-400 cursor-not-allowed opacity-60"
+                        : "bg-purple-600 text-white hover:translate-y-0.5 hover:bg-blue-800 hover:shadow-xl"
+                    }`}
             >
                 Proceed to Checkout
             </button>
