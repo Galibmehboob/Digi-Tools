@@ -8,6 +8,14 @@ const Cards = ({ p, i, tagStyles, carts, setCarts }) => {
     const [isAddedCart, setIsAddedCart] = useState(false)
     const handleBuyNow = () => {
         setIsAddedCart(true)
+
+        const isFound = carts.find(item => item.id === p.id)
+        if (isFound) {
+            toast.error("Already Added!");
+            return
+        }
+
+
         setCarts([...carts, p])
         toast.success("Item Added to Cart")
     }
