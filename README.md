@@ -17,4 +17,6 @@ Tools and Technologies Used
 --> Tailwind CSS
 --> React Toastify
 
-live link: digitoolsplatformg.netlify.app
+<p>live link:  <a href="digitoolsplatformg.netlify.app"> </p>
+
+
